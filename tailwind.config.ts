@@ -57,6 +57,34 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Financial specific colors
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+        },
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-success": "var(--gradient-success)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-hero": "var(--gradient-hero)",
+      },
+      boxShadow: {
+        "glow": "var(--shadow-glow)",
+        "card": "var(--shadow-card)",
+        "elevated": "var(--shadow-elevated)",
+      },
+      transitionTimingFunction: {
+        "smooth": "var(--transition-smooth)",
+        "bounce": "var(--transition-bounce)",
       },
       borderRadius: {
         lg: "var(--radius)",
