@@ -26,13 +26,27 @@ const StockPrediction = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
             AI-Powered <span className="bg-gradient-primary bg-clip-text text-transparent">Stock Predictions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Our advanced machine learning models analyze market patterns to predict stock movements with high accuracy.
           </p>
+        </div>
+
+        {/* Stock Search */}
+        <div className="flex justify-center mb-12">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Search Stock to Analyze</h3>
+            <StockSearch 
+              onStockSelect={(ticker) => {
+                console.log('Selected ticker:', ticker);
+                // Here you would update the chart data with the new ticker
+              }}
+              placeholder="Enter ticker symbol (e.g., AAPL, GOOGL)"
+            />
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -181,20 +195,6 @@ const StockPrediction = () => {
             </div>
           </CardContent>
         </Card>
-
-        {/* Stock Search */}
-        <div className="flex justify-center mt-8">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold mb-4">Search Different Stock</h3>
-            <StockSearch 
-              onStockSelect={(ticker) => {
-                console.log('Selected ticker:', ticker);
-                // Here you would update the chart data with the new ticker
-              }}
-              placeholder="Enter ticker symbol (e.g., AAPL, GOOGL)"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

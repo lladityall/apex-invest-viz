@@ -62,13 +62,27 @@ const OptionsTrading = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
             <span className="bg-gradient-success bg-clip-text text-transparent">F&O Trading</span> Intelligence
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Advanced futures and options strategies with precise entry, exit, and risk management recommendations.
           </p>
+        </div>
+
+        {/* Stock Search */}
+        <div className="flex justify-center mb-12">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Analyze Options Chain</h3>
+            <StockSearch 
+              onStockSelect={(ticker) => {
+                console.log('Selected ticker for options:', ticker);
+                // Here you would update the options chain data with the new ticker
+              }}
+              placeholder="Enter ticker for F&O analysis"
+            />
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
@@ -241,20 +255,6 @@ const OptionsTrading = () => {
             </div>
           </CardContent>
         </Card>
-
-        {/* Stock Search */}
-        <div className="flex justify-center mt-8">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold mb-4">Analyze Different Options Chain</h3>
-            <StockSearch 
-              onStockSelect={(ticker) => {
-                console.log('Selected ticker for options:', ticker);
-                // Here you would update the options chain data with the new ticker
-              }}
-              placeholder="Enter ticker for F&O analysis"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

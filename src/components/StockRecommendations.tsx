@@ -93,13 +93,27 @@ const StockRecommendations = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
             Smart <span className="bg-gradient-success bg-clip-text text-transparent">Stock Recommendations</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             AI-powered stock analysis combining fundamental, technical, and sentiment analysis for optimal portfolio allocation.
           </p>
+        </div>
+
+        {/* Stock Search */}
+        <div className="flex justify-center mb-12">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Get Stock Recommendations</h3>
+            <StockSearch 
+              onStockSelect={(ticker) => {
+                console.log('Selected ticker for recommendations:', ticker);
+                // Here you would fetch recommendations for the selected ticker
+              }}
+              placeholder="Search for stock recommendations"
+            />
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -286,20 +300,6 @@ const StockRecommendations = () => {
             </div>
           </CardContent>
         </Card>
-
-        {/* Stock Search */}
-        <div className="flex justify-center mt-8">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold mb-4">Get Recommendations for Specific Stocks</h3>
-            <StockSearch 
-              onStockSelect={(ticker) => {
-                console.log('Selected ticker for recommendations:', ticker);
-                // Here you would fetch recommendations for the selected ticker
-              }}
-              placeholder="Search for stock recommendations"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
