@@ -4,6 +4,7 @@ import { Badge } from "./ui/enhanced-badge";
 import { Progress } from "@/components/ui/progress";
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { Award, Star, TrendingUp, Shield, Zap, Eye } from "lucide-react";
+import StockSearch from "./StockSearch";
 
 const radarData = [
   { subject: 'Growth', A: 120, B: 110, fullMark: 150 },
@@ -285,6 +286,20 @@ const StockRecommendations = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Stock Search */}
+        <div className="flex justify-center mt-8">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Get Recommendations for Specific Stocks</h3>
+            <StockSearch 
+              onStockSelect={(ticker) => {
+                console.log('Selected ticker for recommendations:', ticker);
+                // Here you would fetch recommendations for the selected ticker
+              }}
+              placeholder="Search for stock recommendations"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

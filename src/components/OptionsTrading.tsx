@@ -3,6 +3,7 @@ import { Button } from "./ui/enhanced-button";
 import { Badge } from "./ui/enhanced-badge";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Target, ArrowUp, ArrowDown, Clock, DollarSign } from "lucide-react";
+import StockSearch from "./StockSearch";
 
 const optionsData = [
   { strike: 170, callOI: 15420, putOI: 8900, callVolume: 2340, putVolume: 1200 },
@@ -240,6 +241,20 @@ const OptionsTrading = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Stock Search */}
+        <div className="flex justify-center mt-8">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Analyze Different Options Chain</h3>
+            <StockSearch 
+              onStockSelect={(ticker) => {
+                console.log('Selected ticker for options:', ticker);
+                // Here you would update the options chain data with the new ticker
+              }}
+              placeholder="Enter ticker for F&O analysis"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

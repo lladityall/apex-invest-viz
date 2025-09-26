@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "./ui/enhanced-button";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { TrendingUp, TrendingDown, DollarSign, Target } from "lucide-react";
+import StockSearch from "./StockSearch";
 
 const stockData = [
   { time: '09:30', actual: 150, predicted: 148, volume: 1200 },
@@ -180,6 +181,20 @@ const StockPrediction = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Stock Search */}
+        <div className="flex justify-center mt-8">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4">Search Different Stock</h3>
+            <StockSearch 
+              onStockSelect={(ticker) => {
+                console.log('Selected ticker:', ticker);
+                // Here you would update the chart data with the new ticker
+              }}
+              placeholder="Enter ticker symbol (e.g., AAPL, GOOGL)"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
           <div className="flex items-center space-x-2">
             <BarChart3 className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              AlphaFund
+              DAY Finance
             </span>
           </div>
           
